@@ -15,17 +15,26 @@ class HomePage extends StatelessWidget {
               })
         ],
       ),
-      body: Center(
-        child: Text(
-          "Hellow Manchester",
-          style: TextStyle(fontSize: 20),
-        ),
+      body: ListView(
+        children: <Widget>[
+          Card(
+              child: ListTile(
+            leading: Icon(Icons.star),
+            title: Text("Michael Msiru"),
+            subtitle: Text("Software Developer"),
+            trailing: IconButton(
+                icon: Icon(Icons.more_vert),
+                onPressed: () {
+                  print("About Me");
+                }),
+          ))
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("home")),
         BottomNavigationBarItem(icon: Icon(Icons.apps), title: Text("apps")),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), title: Text("settings")),
-
+        BottomNavigationBarItem(
+            icon: Icon(Icons.settings), title: Text("settings")),
       ]),
     );
   }
